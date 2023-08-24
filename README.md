@@ -22,7 +22,7 @@ I'll start with the continuum mesh. To save the continuum data source as a polyg
 
 To save the continuum as a volume in the OpenVDB format, we'll need to convert the Unstructured Grid to a Structured Grid (similar to the voxel format OpenVDB expects). To do this, apply a "Resample to Image" filter. You'll need to set the XYZ sampling dimensions. For this dataset, I have the sample dimensions set to 1024 x 512 x 512. Next, set the visualization mode in ParaView to "Volume". You should see something like the screenshot below. Once you see this, you can `File > Save Data` to export to an OpenVDB file. VDBs are tyically large, so be aware that exporting one or multiple VDBs may take several minutes. 
 
-![Screenshot of continuum represented as a volume.](https://github.com/halBRY/blender-sciviz/blob/main/images/paraview_1.png?raw=true)
+![Screenshot of continuum represented as a volume.](https://github.com/halBRY/blender-sciviz/blob/main/images/paraview_2.png?raw=true)
 
 If you are using the blood flow dataset, you should now have 10 PLY files for each data source (one file per time step). 
 
