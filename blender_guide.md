@@ -14,7 +14,7 @@ import data
 
 Starting in ParaView, import all the data sources from the dataset. It should look something like this. 
 
-![Screenshot of continuum and blood cells imported into ParaView.](https://github.com/halBRY/blender-sciviz/blob/main/paraview_1.png?raw=true)
+![Screenshot of continuum and blood cells imported into ParaView.](https://github.com/halBRY/blender-sciviz/blob/main/images/paraview_1.png?raw=true)
 
 When moving from ParaView to something like Blender, it is important to keep in mind the type of data that is being displayed. The blood cells, rbc and bad_rbc, are Polkygonal Meshes, so it is relatively straight forward to export them to a mesh format that Blender can read. Simply select the rbc and bad_rbc data sources one at a time and click on `File > Save Data`. Save them as PLYs (you could export as other file types, such as OBJ or STL, but I use PLY for the vertex colors option). The continuum, on the other hand, is an Unstructured Mesh. This means we will have to apply some sort of filter to transform the data into a format better suited for Blender. What we choose depends on what is desired for the final visualization. For this guide, I will explain two methods: polygonal surface with a color map, or an OpenVDB volume representation. 
 
