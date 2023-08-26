@@ -10,8 +10,6 @@ For this guide, I will be using [this](https://docs.alcf.anl.gov/cooley/software
 
 ## ParaView
 
-import data
-
 Starting in ParaView, import all the data sources from the dataset. It should look something like this. 
 
 ![Screenshot of continuum and blood cells imported into ParaView.](https://github.com/halBRY/blender-sciviz/blob/main/images/paraview_1.png?raw=true)
@@ -29,9 +27,30 @@ If you are using the blood flow dataset, you should now have 10 PLY files for ea
 
 ## Blender
 
+Now, we'll set up a simple scene in Blender. This will demonstrate how to access vertex colors, set up a custom color map, add camera animation, and apply modifiers. All of this will be done Blender's GUI. 
 
+To begin, open Blender, delete the default cube. To import the PLY files, you can simply go to `File > Import > Standford (.ply)`. To import an OpenVDB, you can press `Shift + A`, then select `Volume > Import OpenVDB...`. 
+
+Set up lights and camera view
+
+Blender's default scene already has a camera and a light for you. I typically adjust mine so that the light is a Sun Light with a power of 10, and then I lock the camera to my viewport while I adjust to look at the data. 
+
+Set up materials 
+    Color attribute
+    Color map
+    Principled Volume
+
+Camera animation
+
+With the scene set up, you can [insert how to render video out of Blender here].
 
 ## GUI to Python Script 
+
+If a dataset is too large to feasibly move to a local machine, or if you'd like to make use of distributed rendering, we will use Blender command line rendering and Blender's Python API. For this tutorial, my use case is converting my scene into a Python script that will be moved to and rendered on a remote Linux computer. 
+
+Blender does support editing a .blend file (the file format of a saved Blender scene) with a Python script from the command line. However, I have had mixed luck with this method, as I have been unable to get the Blender keyframe number to change when it is updated by a Python script. In contrast, creating the entire scene in a Python file functions as expected. 
+
+Unfortunately, I am not sure how to export a Blender scene as a Python script, so I've been creating them by hand. Blender does, however, have a Python terminal that allows the user to quickly query all of the information needed to fill into the script. 
 
 ## Headless commands 
 
